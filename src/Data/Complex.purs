@@ -10,11 +10,12 @@ module Data.Complex
   , magnitude
   ) where
 
-import Math (abs, atan2, cos, sin, sqrt)
 import Prelude
 import Test.QuickCheck
 import Test.QuickCheck.Arbitrary
+import Math (abs, atan2, cos, sin, sqrt)
 import Test.QuickCheck.Gen (uniform)
+import Text.Format (format, precision)
 
 
 -- | An abstract complex type.
@@ -129,4 +130,4 @@ instance eqComplex :: Eq Complex where
   eq (Complex r i) (Complex r' i') = r == r' && i == i'
 
 instance showComplex :: Show Complex where
-  show (Complex r i) = show r <> " + " <> show i <> "i"
+  show (Complex r i) = (format (precision 5) r) <> (if i < 0.0 then " - " else " + ") <> (format (precision 5) (abs i)) <> "i"
