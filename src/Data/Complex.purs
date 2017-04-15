@@ -130,4 +130,4 @@ instance eqComplex :: Eq Complex where
   eq (Complex r i) (Complex r' i') = r == r' && i == i'
 
 instance showComplex :: Show Complex where
-  show (Complex r i) = (format (precision 5) r) <> (if i < 0.0 then " - " else " + ") <> (format (precision 5) (abs i)) <> "i"
+  show (Complex r i) = (format (precision 3) r) <> (if i < 0.0 then " - " else " + ") <> (format (precision 3) (abs i)) <> "i"
