@@ -37,7 +37,6 @@ derive newtype instance semiringApproxComplex :: Semiring ApproxComplex
 derive newtype instance ringApproxComplex :: Ring ApproxComplex
 derive newtype instance commutativeRingApproxComplex :: CommutativeRing ApproxComplex
 derive newtype instance euclideanRingApproxComplex :: EuclideanRing ApproxComplex
-derive newtype instance fieldApproxComplex :: Field ApproxComplex
 derive newtype instance arbitraryApproxComplex :: Arbitrary ApproxComplex
 
 polarIsomorphism :: Complex -> Result
@@ -73,7 +72,6 @@ testComplex = do
   checkRing p
   checkEuclideanRing p
   checkCommutativeRing p
-  checkField p
 
   quickCheck polarIsomorphism
   quickCheck cartesianIsomorphism

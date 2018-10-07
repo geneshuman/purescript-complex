@@ -124,8 +124,6 @@ instance euclideanRingComplex :: EuclideanRing Complex where
       d  = r'*r' + i'*i'
   mod _ _ = zero
 
-instance fieldComplex :: Field Complex
-
 instance eqComplex :: Eq Complex where
   eq (Complex r i) (Complex r' i') = r == r' && i == i'
 
